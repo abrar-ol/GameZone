@@ -1,0 +1,7 @@
+{
+  "name": "GameZone",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
