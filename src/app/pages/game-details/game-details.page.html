@@ -1,9 +1,46 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>gameDetails</ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{genres}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
+  <ion-card *ngIf="information">
+    <ion-card-header>
+      <ion-card-title>{{information?.name}}</ion-card-title>
+      <ion-card-subtitle>{{information?.released}}</ion-card-subtitle>
+    </ion-card-header>
 
+    <ion-card-content text-center>
+
+      <img [src]="information.background_image" class="info-img">
+
+      <ion-item lines="none">
+        <ion-icon name="star-half" slot="start"></ion-icon>
+        <ion-label>{{information.rating}}</ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="storefront-outline" slot="start"></ion-icon>
+        <ion-label>{{stores}}</ion-label>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-icon name="thumbs-up-outline"></ion-icon>
+        <ion-label>{{information.score}}</ion-label>
+
+            </ion-item>
+
+      <ion-button expand="full" (click)="openWebsite()">
+        Open Website
+      </ion-button>
+
+
+
+    </ion-card-content>
+
+  </ion-card>
 </ion-content>
